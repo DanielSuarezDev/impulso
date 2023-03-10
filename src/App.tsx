@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from "styled-components";
+import { FC, createContext, Suspense } from "react";
 
-function App() {
+import { Router } from "./routes/Router";
+import { GlobalStyle } from "./Config/GlobalStyle";
+import { lightTheme } from "./Config/ImpulsoTheme";
+import { AuthProvider } from "./Context/Auth/AuthContext";
+
+export const ThemeContext = createContext<any>(null);
+
+const App: FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeContext.Provider value={lightTheme}>
+      <ThemeProvider theme={lightTheme}>
+        <GlobalStyle />
+        <Suspense fallback={<p>loading pending .....</p>}>
+          <AuthProvider>
+            <Router />
+          </AuthProvider>
+        </Suspense>
+      </ThemeProvider>
+    </ThemeContext.Provider>
   );
-}
+};
 
 export default App;
