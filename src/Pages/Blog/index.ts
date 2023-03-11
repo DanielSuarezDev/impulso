@@ -1,0 +1,1 @@
+export {BlogLoad as default} from './Blog.load';

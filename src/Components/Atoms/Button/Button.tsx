@@ -1,8 +1,8 @@
 import {FC} from 'react'
 import { Container } from './styles'
 
-export const Button:FC<any> = ({text, width, height}) => {
+export const Button:FC<any> = ({text, width, height, color, background, onClick}) => {
   return (
-    <Container width={width} height={height}>{text}</Container>
+    <Container onClick={onClick} width={width} height={height} color={color} background={background}>{text}</Container>
   )
 }

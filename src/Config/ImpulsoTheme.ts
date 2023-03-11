@@ -21,7 +21,7 @@ export const lightTheme = {
   white: '#fff',
   whiteBone: '#DFDEDE',
   black: '#000',
-  background: '#FBFBFB',
+  background: '#fff',
   basic_100: '#000',
   shadow: 'rgba(184, 184, 184, 0.69)',
 };

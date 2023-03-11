@@ -1,0 +1,1 @@
+export {ResourcesLoad as default} from './Resources.load'

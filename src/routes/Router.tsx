@@ -1,6 +1,6 @@
 import {FC, useEffect, lazy, useState} from 'react';
 import {Routes, Route} from 'react-router';
-import {Navigate, BrowserRouter} from 'react-router-dom';
+import {Navigate} from 'react-router-dom';
 import {Route as RouteType, ROUTES} from './types';
 import { Layout } from '../Components/Template/Layout/Layout';
 import { useAuth } from '../Context/Auth/AuthContext';
@@ -22,27 +22,50 @@ if (width > 768) {
 const Home = lazy(
   () => import(/*webpackChunkName: "Home"*/ '../Pages/Home'),
 );
+
+const About = lazy(
+  () => import(/*webpackChunkName: "About"*/ '../Pages/About'),
+);
+
+const Blog = lazy(
+  () => import(/*webpackChunkName: "Blog"*/ '../Pages/Blog'),
+);
+
+const Resources = lazy(
+  () => import(/*webpackChunkName: "Resources"*/ '../Pages/Resources'),
+);
+
 const Login = lazy(
   () => import(/*webpackChunkName: "Login"*/ '../Pages/Login'),
 );
 
-export const RoutesPublic: RouteType[] = [
+export const RoutesRoute: RouteType[] = [
   {
-    path: ROUTES.LOGIN,
-    element: <Login />,
-  },
-  {
-    path: '*',
-    element: <Navigate to={ROUTES.LOGIN} replace />,
-  },
-];
-
-export const RoutesPrivate: RouteType[] = [
-  {
-    isPrivate: true,
+    isPrivate: false,
     path: ROUTES.HOME,
     element: <Home />,
     isLayout: true,
+  },
+  {
+    path: ROUTES.ABOUT,
+    element: <About />,
+    isLayout: true,
+  },
+  {
+    isPrivate: true,
+    path: ROUTES.RESOURCES,
+    element: <Resources />,
+    isLayout: true,
+  },
+  {
+    isPrivate: true,
+    path: ROUTES.BLOG,
+    element: <Blog />,
+    isLayout: true,
+  },
+  {
+    path: ROUTES.LOGIN,
+    element: <Login />,
   },
   {
     path: '*',
@@ -67,22 +90,18 @@ export const Router: FC = () => {
   }
   return (
     <Routes>
-      {userConfig
-        ? RoutesPrivate.map((route, index) => (
+      {RoutesRoute.map((route, index) => (
             <Route
               path={route.path}
               element={
                 route.isLayout ? (
-                  <Layout>{route.element}</Layout>
+                  <Layout userConfig={userConfig}>{route.element}</Layout>
                 ) : (
                   route.element
                 )
               }
               key={index}
             />
-          ))
-        : RoutesPublic.map((route, index) => (
-            <Route path={route.path} element={route.element} key={index} />
           ))}
     </Routes>
   );

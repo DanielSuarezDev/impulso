@@ -3,11 +3,12 @@ import styled from "styled-components";
 export const Image = styled.img<{
   width?: string;
   height?: string;
+  radius?: string;
 }>`
   width: ${({ width }) => width || "100%"};
   height: ${({ height }) => height || "328px"};
   object-fit: cover;
-  border-radius: 0px 0px 34px 34px;
+  border-radius: ${({ radius }) => radius || "0px 0px 34px 34px"};
 `;
 
 export const Container = styled.div`

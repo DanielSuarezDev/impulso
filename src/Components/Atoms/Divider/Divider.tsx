@@ -1,10 +1,10 @@
-import { DividerContainer } from './styles';
+import { FC } from "react";
+import { DividerContainer } from "./styles";
 
-
-const Divider = () => {
+const Divider: FC<any> = ({ lineUnique = false }) => {
   return (
-    <DividerContainer>
-      <span>O</span>
+    <DividerContainer lineUnique={lineUnique}>
+      {!lineUnique ? <span>O</span> : <span></span>}
     </DividerContainer>
   );
 };

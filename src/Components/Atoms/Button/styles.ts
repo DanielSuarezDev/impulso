@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const Container = styled.button<{
   width?: string;
   height?: string;
+  color?: string;
+  background?: string;
 }>`
   display: flex;
   flex-direction: column;
@@ -10,8 +12,8 @@ export const Container = styled.button<{
   justify-content: center;
   width: ${({ width }) => width || "328px"};
   height: ${({ height }) => height || "49px"};
-  background-color: #5305d2;
-  color: #fff;
+  background-color: ${({ background }) => background || "#5305d2"};
+  color:${({ color }) => color || "#fff"};
   border-radius: 7px;
   font-size: 16px;
   padding: 0 10px;

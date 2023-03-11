@@ -1,10 +1,13 @@
-import {FC} from 'react'
+import { FC } from "react";
+import { Footer } from "../../Molecules/Footer/Footer";
+import { Header } from "../../Molecules/Header/Header";
 
-export const Layout:FC<any> = ({children}) => {
+export const Layout: FC<any> = ({ children,userConfig }) => {
   return (
-    <div>
-        <h1>Layout</h1>
-        {children}
+    <div style={{marginTop: '50px', position: 'relative'}}>
+      <Header userConfig={userConfig} />
+      {children}
+      <Footer />
     </div>
-  )
-}
+  );
+};

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const DividerContainer = styled.div`
+export const DividerContainer = styled.div<{lineUnique?: boolean}>`
   display: flex;
   align-items: center;
   text-align: center;
@@ -11,9 +11,9 @@ export const DividerContainer = styled.div`
   &::after {
     content: '';
     flex-grow: 1;
-    background-color: gray;
+    background-color: #D2D2D2;
     height: 1px;
-    margin: 0px 10px;
+    margin: ${props => props.lineUnique ? '0px' : '0px 10px'};
   }
 
   span {
