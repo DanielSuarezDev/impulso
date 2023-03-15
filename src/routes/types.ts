@@ -6,9 +6,10 @@ export interface Route {
 }
 
 export enum ROUTES {
-  LOGIN = 'login',
-  HOME = '/',
-  RESOURCES = '/recursos',
-  BLOG = '/blog',
-  ABOUT = '/nosotros',
+  LOGIN = "login",
+  HOME = "/",
+  RESOURCES = "/recursos",
+  BLOG = "/blog",
+  ABOUT = "/nosotros",
+  BESAVE = "/ser-salvo",
 }

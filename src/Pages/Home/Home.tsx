@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import { FC, useEffect, useState } from "react";
 import { Banner } from "../../Components/Molecules/Banner/Banner";
 import { useAuth } from "../../Context/Auth/AuthContext";
@@ -12,6 +13,7 @@ import {
 } from "./styles";
 
 import Lottie from "lottie-react";
+import { useNavigate } from "react-router-dom";
 import animationData from "../../Lottie/hero.json";
 import TextSwitcher from "../../Components/Atoms/TextSwitcher/TextSwitcher";
 import { Button } from "../../Components/Atoms/Button/Button";
@@ -21,10 +23,16 @@ import { CardSalvation } from "../../Components/Molecules/CardSalvation/CardSalv
 import resource from "../../Lottie/resources.json";
 import donate from "../../Lottie/donate.json";
 import { CardResources } from "./Components/CardResources";
+import { DrawerDonate } from "./Components/DrawerDonate/DrawerDonate";
 
 export const Home: FC<any> = ({ ListMinisters }) => {
   const { userConfig } = useAuth();
+  const [isOpen, setIsOpen] = useState(false);
 
+  const handleOpen = () => setIsOpen(true);
+
+  const handleClose = () => setIsOpen(false);
+  const navigate = useNavigate();
   return (
     <Container>
       <Welcome>
@@ -80,7 +88,15 @@ export const Home: FC<any> = ({ ListMinisters }) => {
         background="#FF8EEC"
         lottie={donate}
         textButton="Saber Mas"
+        onclick={handleOpen}
       />
+      {isOpen && (
+        <DrawerDonate
+          open={isOpen}
+          handleClose={handleClose}
+          userConfig={userConfig}
+        />
+      )}
     </Container>
   );
 };
