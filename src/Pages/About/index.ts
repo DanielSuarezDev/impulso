@@ -1,1 +1,1 @@
-export {AboutLoad as default} from './About.load';
+export { AboutLoad as default } from "./About.load";

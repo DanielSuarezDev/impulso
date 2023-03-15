@@ -3,7 +3,14 @@ import { Container, Text, Title } from "./styles";
 import { Button } from "../../../Components/Atoms/Button/Button";
 import { FC } from "react";
 
-export const CardResources:FC<any> = ({title, text, lottie, background, textButton}: any) => {
+export const CardResources: FC<any> = ({
+  title,
+  onclick,
+  text,
+  lottie,
+  background,
+  textButton,
+}: any) => {
   return (
     <Container background={background}>
       <Lottie
@@ -13,7 +20,12 @@ export const CardResources:FC<any> = ({title, text, lottie, background, textButt
       />
       <Title>{title}</Title>
       <Text>{text}</Text>
-      <Button text={textButton} background="#F2F2F2" color="#000" />
+      <Button
+        text={textButton}
+        onClick={onclick}
+        background="#F2F2F2"
+        color="#000"
+      />
     </Container>
   );
 };
