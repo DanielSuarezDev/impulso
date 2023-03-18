@@ -28,6 +28,8 @@ const BeSave = lazy(
 );
 
 const Blog = lazy(() => import(/*webpackChunkName: "Blog"*/ "../Pages/Blog"));
+const BlogDetail = lazy(() => import(/*webpackChunkName: "Blog"*/ "../Components/Molecules/Markdown/MarkdownDetail"));
+const ResourceDetail = lazy(() => import(/*webpackChunkName: "Blog"*/ "../Components/Molecules/ResourceForm/ResourceDetail"));
 
 const Resources = lazy(
   () => import(/*webpackChunkName: "Resources"*/ "../Pages/Resources")
@@ -52,7 +54,7 @@ export const RoutesRoute: RouteType[] = [
   {
     path: ROUTES.BESAVE,
     element: <BeSave />,
-    isLayout: false,
+    isLayout: true,
   },
   {
     isPrivate: true,
@@ -65,6 +67,18 @@ export const RoutesRoute: RouteType[] = [
     path: ROUTES.BLOG,
     element: <Blog />,
     isLayout: true,
+  },
+  {
+    isPrivate: true,
+    path: ROUTES.BLOG_DETAIL,
+    element: <BlogDetail />,
+    isLayout: false,
+  },
+  {
+    isPrivate: true,
+    path: ROUTES.RESOURCE_DETAIL,
+    element: <ResourceDetail />,
+    isLayout: false,
   },
   {
     path: ROUTES.LOGIN,

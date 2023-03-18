@@ -25,6 +25,7 @@ export const CardResources: FC<any> = ({
         onClick={onclick}
         background="#F2F2F2"
         color="#000"
+        width="80%"
       />
     </Container>
   );

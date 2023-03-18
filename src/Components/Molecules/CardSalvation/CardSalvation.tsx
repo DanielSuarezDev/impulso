@@ -2,8 +2,10 @@ import Lottie from "lottie-react";
 import { Button } from "../../Atoms/Button/Button";
 import { Container, Text, Title } from "./styles";
 import animationData from "../../../Lottie/bible.json";
+import { useNavigate } from "react-router-dom";
 
 export const CardSalvation = () => {
+  const navigate = useNavigate();
   return (
     <Container>
         <Lottie animationData={animationData} loop={true} style={{ width: 150 , height: 150}} />
@@ -16,7 +18,7 @@ export const CardSalvation = () => {
       </Text>
 
     
-      <Button text="Quiero saber más" background="#F2F2F2" color="#000" />
+      <Button text="Quiero saber más" background="#F2F2F2" color="#000"  onClick={() => navigate("/ser-salvo")}  />
       
     
     </Container>

@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    background: #5305D2;
-    height: 90px;
-    width: 100%;
-    /* position: fixed; */
-    bottom: 0;
-    margin-top: 70px;
+    position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* ajusta el tamaño como desees */
+  background-color: #f5f5f5; /* agrega el color de fondo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 `;

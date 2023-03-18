@@ -14,12 +14,11 @@ export const Banner: FC<BannerProps> = ({ text }) => {
       <div>
         <Title> {text}</Title>
       </div>
-      {/* <Image src={Tesoro} alt="Tesoro" /> */}
       <div
         style={{
           position: "absolute",
-          right: "-16px",
-          top: "100px",
+          right: 0,
+          top: '90px',
           width: 150,
           height: 150,
         }}
@@ -27,7 +26,7 @@ export const Banner: FC<BannerProps> = ({ text }) => {
         <Lottie
           animationData={animationData}
           loop={true}
-          style={{ width: 150, height: 150 }}
+          // style={{ width: 150, height: 150 }}
         />
       </div>
     </Container>

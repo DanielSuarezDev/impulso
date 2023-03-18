@@ -12,4 +12,6 @@ export enum ROUTES {
   BLOG = "/blog",
   ABOUT = "/nosotros",
   BESAVE = "/ser-salvo",
+  BLOG_DETAIL = "/blog/:id",
+  RESOURCE_DETAIL= "/recursos/:id",
 }

@@ -6,7 +6,7 @@ export const Image = styled.img<{
   radius?: string;
 }>`
   width: ${({ width }) => width || "100%"};
-  height: ${({ height }) => height || "328px"};
+  height: ${({ height }) => height || "30vh"};
   object-fit: cover;
   border-radius: ${({ radius }) => radius || "0px 0px 34px 34px"};
 `;
@@ -15,9 +15,9 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   width: 100%;
-  height: 100%;
+  height: 100vh;
 `;
 
 export const Title = styled.h2`

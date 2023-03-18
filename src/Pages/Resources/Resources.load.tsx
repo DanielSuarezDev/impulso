@@ -1,8 +1,8 @@
 import React from 'react'
-import { Resources } from './Resources'
+import ResourceList  from './Resources'
 
 export const ResourcesLoad = () => {
   return (
-    <Resources />
+    <ResourceList />
   )
 }

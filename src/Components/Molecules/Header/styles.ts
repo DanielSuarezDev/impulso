@@ -12,7 +12,4 @@ export const Container = styled.header`
     left: 0;
     right: 0;
     background: #fff;
-    @media (min-width: 768px) {
-        padding: 0 2rem;
-    }
 `

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Close } from "../../../../assets";
 import Nequi from "../../../../assets/images/nequi-logo.png";
-import { DrawerContainer, Overlay, Container } from "./styles";
+import { DrawerContainer, Overlay, Container, Title, Text } from "./styles";
 
 export const DrawerDonate: FC<any> = ({ open, handleClose }) => {
   return (
@@ -9,23 +9,17 @@ export const DrawerDonate: FC<any> = ({ open, handleClose }) => {
       <DrawerContainer open={open}>
         <Close onClick={handleClose} />
         <Container>
-          <p>
-            <strong>Apoyando nuestro enfoque</strong>
-          </p>
-          <p style={{ width: "85%" }}>
+            <Title>Apoyando nuestro enfoque</Title>
+          <Text>
             Para nosotros es un honor saber que quieres apoyar lo que hacemos y
             lo que quieras ofrendar para nosotros es un privilegio.
-          </p>
+          </Text>
           <img src={Nequi} alt="" />
-          <p>
-            Puedes consignar a la cuenta nequi <br />
-            <strong>3194096681</strong>
-          </p>
-          <p>
-            Nos puedes enviar el soporte al correo:
+          <Text>
+            Escribenos a:
             <br />
             <strong>impulsocristiano@gmail.com </strong>
-          </p>
+          </Text>
         </Container>
       </DrawerContainer>
       ;

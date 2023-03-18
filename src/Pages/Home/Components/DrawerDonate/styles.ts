@@ -2,14 +2,12 @@ import styled from "styled-components";
 
 export const DrawerContainer = styled.div<{ open?: boolean }>`
   position: fixed;
-  width: 60%;
-  height: auto;
+  width: 300px;
+  height: 350px;
   background-color: #fff;
-  z-index: 10000;
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
   transition: transform 0.3s ease-in-out;
-  border-radius: 27px;
-  margin-right: 10px;
+  border-radius: 17px;
   padding: 10px;
 `;
 
@@ -33,4 +31,16 @@ export const Container = styled.div`
   text-align: center;
   flex-direction: column;
   align-items: center;
+`;
+
+export const Title = styled.h2`
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+`;
+
+export const Text = styled.p`
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 10px;
 `;
