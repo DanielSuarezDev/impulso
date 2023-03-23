@@ -4,6 +4,8 @@ import React, { useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { BlogContext, BlogPost } from '../../../Context/Blog/BlogContext';
 import ReactMarkdown from 'react-markdown';
+import { Title , DatePost, MarkdownWrapper} from './styles';
+import { Back } from '../../../assets';
 
 const BlogDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -22,10 +24,15 @@ const BlogDetail = () => {
 
   return (
     <div>
-      <Link to="/blog">Volver a la lista</Link>
-      <h2>{post.title}</h2>
-      <p>{post.date}</p>
+      <MarkdownWrapper>
+      <Link to="/blog">
+        <Back />
+      </Link>
+      <Title>{post.title}</Title>
+      <DatePost>{post.date}</DatePost>
+
       <ReactMarkdown>{post.content}</ReactMarkdown>
+      </MarkdownWrapper>
     </div>
   );
 };

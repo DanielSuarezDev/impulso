@@ -7,7 +7,12 @@ export const Container = styled.div`
   height: 60px; /* ajusta el tamaño como desees */
   background-color: #f5f5f5; /* agrega el color de fondo */
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
+`;
 
+export const Span = styled.span`
+  font-size: 1.3rem;
+  color: #000;
 `;

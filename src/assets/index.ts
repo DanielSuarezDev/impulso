@@ -53,4 +53,4 @@ export {default as Facebook} from './icons/Sidebar/Facebook';
 export {default as Share} from './icons/Sidebar/Share';
 
 
-// export {default as Perfil} from './images/perfil.png';
+export {default as Logo} from './images/logo-impulso.png';

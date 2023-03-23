@@ -18,7 +18,7 @@ const colors: any = {
 };
 
 export const MarkdownWrapper = styled.div`
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   line-height: 1.5;
   color: #333;
   margin: 0 auto;

@@ -18,7 +18,7 @@ export const CardSalvation = () => {
       </Text>
 
     
-      <Button text="Quiero saber más" background="#F2F2F2" color="#000"  onClick={() => navigate("/ser-salvo")}  />
+      <Button text="Quiero saber más" background="#F2F2F2" color="#000"  onClick={() => navigate("/ser-salvo")} />
       
     
     </Container>

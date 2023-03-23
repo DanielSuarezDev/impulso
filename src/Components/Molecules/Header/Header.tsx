@@ -1,5 +1,5 @@
 import React, {FC, useState } from "react";
-import { MenuBar } from "../../../assets";
+import { Logo, MenuBar } from "../../../assets";
 import { DrawerMenu } from "../../../Pages/Login/Components/DrawerMenu";
 import { Container } from "./styles";
 
@@ -15,7 +15,7 @@ export const Header:FC<any> = ({userConfig}) => {
     <>
         {isOpen && <DrawerMenu open={isOpen} handleClose={handleClose } userConfig={userConfig}   />}
     <Container>
-      <h1>Logo</h1>
+      <img src={Logo} alt="Logo" width={180} height={60} />
       <MenuBar onClick={handleOpen} />
     </Container>
     </>

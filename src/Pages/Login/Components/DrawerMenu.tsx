@@ -6,10 +6,13 @@ import { ContainerDrawer, LinkList, Span } from "./styles";
 import {
   About,
   Blog,
+  Book,
   Facebook,
+  House,
   Inicio,
   Instagram,
   Resources,
+  Send,
   Share,
 } from "../../../assets";
 import Divider from "../../../Components/Atoms/Divider/Divider";
@@ -33,12 +36,12 @@ const navigate = useNavigate();
     {
       name: "Inicio",
       path: "/",
-      Icon: Inicio,
+      Icon: House,
     },
     {
       name: "Blog",
       path: "/blog",
-      Icon: Blog,
+      Icon: Book,
     },
     {
       name: "Recursos",
