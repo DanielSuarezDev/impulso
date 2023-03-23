@@ -16,7 +16,7 @@ const App: FC = () => {
   // eslint-disable-next-line no-restricted-globals
   const [width] = useState(window.screen.width);
   useEffect(() => {
-    logEvent(analitycs, 'page_views', {
+    logEvent(analitycs, "page_views", {
       page_path: window.location.pathname + window.location.search,
     });
   }, []);
@@ -28,7 +28,24 @@ const App: FC = () => {
           <AuthProvider>
             <ResourceProvider>
               <BlogProvider>
-                <Router />
+                {width < 768 ? (
+                  <Router />
+                ) : (
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "100vh",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <h1>
+                      Esta página solo se puede visualizar en dispositivos
+                      móviles
+                    </h1>
+                  </div>
+                )}
               </BlogProvider>
             </ResourceProvider>
           </AuthProvider>
