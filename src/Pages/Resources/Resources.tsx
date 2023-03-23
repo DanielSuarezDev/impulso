@@ -23,7 +23,7 @@ const ResourceList = () => {
       justifyContent: 'center',
       gap: '16px',
     }}>
-      {userConfig?.email !== 'danielsuarez3114@gmail.com' && <ResourceForm />}
+      {userConfig?.email === 'danielsuarez3114@gmail.com' && <ResourceForm />}
       <h2>Lista de recursos</h2>
       {resources.map((resource: Resource) => (
         <Card

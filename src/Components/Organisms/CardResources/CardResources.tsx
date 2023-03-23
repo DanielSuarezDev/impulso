@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { useAuth } from '../../../Context/Auth/AuthContext';
 
 const CardContainer = styled.div`
   display: flex;
@@ -63,6 +64,8 @@ const CardButton = styled(Link)`
 
 
 const Card: FC<any> = ({ imageUrl, badgeText, title, to }) => {
+
+  const {userConfig} = useAuth();
   return (
     <CardContainer>
     <ImageContainer>
@@ -70,7 +73,7 @@ const Card: FC<any> = ({ imageUrl, badgeText, title, to }) => {
       <CardImage src={imageUrl} alt={title} />
     </ImageContainer>
     <CardTitle>{title}</CardTitle>
-    <CardButton to={to} >Ir al material</CardButton>
+    {userConfig ? <CardButton to={to} >Ir al material</CardButton> : <CardButton to="/login" >Inicia sesión para ver el material</CardButton>}
   </CardContainer>
   );
 };
